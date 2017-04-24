@@ -57,4 +57,22 @@
     return [AutoLayout genericConstraintFrom:view toView:superView withAttribute:attribute andMultiplier:1.0];
 }
 
++(NSLayoutConstraint *)equalHeightConstraintFromView:(UIView *)view
+                                              toView:(UIView *)otherView
+                                      withMultiplier:(CGFloat)multiplier {
+    NSLayoutConstraint *heightConstraint = [AutoLayout genericConstraintFrom:view toView:otherView withAttribute:NSLayoutAttributeHeight andMultiplier:multiplier];
+    
+    return heightConstraint;
+}
+
++(NSLayoutConstraint *)leadingConstaintFrom:(UIView *)view
+                                     toView:(UIView *)otherView {
+    return [AutoLayout genericConstraintFrom:view toView:otherView withAttribute:NSLayoutAttributeLeading];
+}
+
++(NSLayoutConstraint *)trailingConstaintFrom:(UIView *)view
+                                      toView:(UIView *)otherView {
+    return [AutoLayout genericConstraintFrom:view toView:otherView withAttribute:NSLayoutAttributeTrailing];
+}
+
 @end
