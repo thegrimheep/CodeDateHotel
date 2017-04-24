@@ -13,6 +13,7 @@
 		A10AE1611EAE5F3200AD29E2 /* CoreDataHotel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A10AE15F1EAE5F3200AD29E2 /* CoreDataHotel.xcdatamodeld */; };
 		A10AE1631EAE5F3200AD29E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10AE1621EAE5F3200AD29E2 /* Assets.xcassets */; };
 		A10AE1661EAE5F3200AD29E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10AE1641EAE5F3200AD29E2 /* LaunchScreen.storyboard */; };
+		A10AE16F1EAE6D2F00AD29E2 /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A10AE16E1EAE6D2F00AD29E2 /* AutoLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		A10AE1621EAE5F3200AD29E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A10AE1651EAE5F3200AD29E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A10AE1671EAE5F3200AD29E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10AE16D1EAE6D2F00AD29E2 /* AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayout.h; sourceTree = "<group>"; };
+		A10AE16E1EAE6D2F00AD29E2 /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				A10AE1571EAE5F3200AD29E2 /* AppDelegate.m */,
 				A10AE1591EAE5F3200AD29E2 /* ViewController.h */,
 				A10AE15A1EAE5F3200AD29E2 /* ViewController.m */,
+				A10AE16D1EAE6D2F00AD29E2 /* AutoLayout.h */,
+				A10AE16E1EAE6D2F00AD29E2 /* AutoLayout.m */,
 				A10AE1621EAE5F3200AD29E2 /* Assets.xcassets */,
 				A10AE1641EAE5F3200AD29E2 /* LaunchScreen.storyboard */,
 				A10AE1671EAE5F3200AD29E2 /* Info.plist */,
@@ -154,6 +159,7 @@
 				A10AE1611EAE5F3200AD29E2 /* CoreDataHotel.xcdatamodeld in Sources */,
 				A10AE1581EAE5F3200AD29E2 /* AppDelegate.m in Sources */,
 				A10AE1551EAE5F3200AD29E2 /* main.m in Sources */,
+				A10AE16F1EAE6D2F00AD29E2 /* AutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
