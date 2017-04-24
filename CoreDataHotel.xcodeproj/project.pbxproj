@@ -17,6 +17,7 @@
 		A10AE1711EAE954100AD29E2 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = A10AE1701EAE954100AD29E2 /* hotels.json */; };
 		A10AE1731EAE955100AD29E2 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = A10AE1721EAE955100AD29E2 /* hotel.png */; };
 		A10AE1751EAE955800AD29E2 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = A10AE1741EAE955800AD29E2 /* room.png */; };
+		A10AE1781EAEA48C00AD29E2 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10AE1771EAEA48C00AD29E2 /* HotelsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		A10AE1701EAE954100AD29E2 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotels.json; path = "../../../seattle-iOS-401d8/07-core-data-hotel/class-31/lab-resources/hotels.json"; sourceTree = "<group>"; };
 		A10AE1721EAE955100AD29E2 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hotel.png; path = "../../../seattle-iOS-401d8/07-core-data-hotel/class-31/lab-resources/hotel.png"; sourceTree = "<group>"; };
 		A10AE1741EAE955800AD29E2 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room.png; path = "../../../seattle-iOS-401d8/07-core-data-hotel/class-31/lab-resources/room.png"; sourceTree = "<group>"; };
+		A10AE1761EAEA48C00AD29E2 /* HotelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelsViewController.h; sourceTree = "<group>"; };
+		A10AE1771EAEA48C00AD29E2 /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				A10AE1571EAE5F3200AD29E2 /* AppDelegate.m */,
 				A10AE1591EAE5F3200AD29E2 /* ViewController.h */,
 				A10AE15A1EAE5F3200AD29E2 /* ViewController.m */,
+				A10AE1761EAEA48C00AD29E2 /* HotelsViewController.h */,
+				A10AE1771EAEA48C00AD29E2 /* HotelsViewController.m */,
 				A10AE16D1EAE6D2F00AD29E2 /* AutoLayout.h */,
 				A10AE1741EAE955800AD29E2 /* room.png */,
 				A10AE1701EAE954100AD29E2 /* hotels.json */,
@@ -170,6 +175,7 @@
 				A10AE15B1EAE5F3200AD29E2 /* ViewController.m in Sources */,
 				A10AE1611EAE5F3200AD29E2 /* CoreDataHotel.xcdatamodeld in Sources */,
 				A10AE1581EAE5F3200AD29E2 /* AppDelegate.m in Sources */,
+				A10AE1781EAEA48C00AD29E2 /* HotelsViewController.m in Sources */,
 				A10AE1551EAE5F3200AD29E2 /* main.m in Sources */,
 				A10AE16F1EAE6D2F00AD29E2 /* AutoLayout.m in Sources */,
 			);
