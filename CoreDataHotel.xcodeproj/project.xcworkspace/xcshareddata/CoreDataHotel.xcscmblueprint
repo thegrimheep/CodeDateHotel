@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "31922FD9D5913DFDFCB26B51A369996D7CE1D5DC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "10CEACD64B40764771519E2B6D148E2C3C85349B" : 9223372036854775807,
+    "31922FD9D5913DFDFCB26B51A369996D7CE1D5DC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "953BCD4C-5E1E-4A43-8898-80BBFBDD94EA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "10CEACD64B40764771519E2B6D148E2C3C85349B" : "..\/seattle-iOS-401d8",
+    "31922FD9D5913DFDFCB26B51A369996D7CE1D5DC" : "CoreDataHotel\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoreDataHotel",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoreDataHotel.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/codefellows\/seattle-iOS-401d8.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "10CEACD64B40764771519E2B6D148E2C3C85349B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thegrimheep\/CodeDateHotel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "31922FD9D5913DFDFCB26B51A369996D7CE1D5DC"
+    }
+  ]
+}
