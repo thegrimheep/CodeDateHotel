@@ -45,7 +45,7 @@
         
         NSManagedObjectContext *context = appdelegate.persistentContainer.viewContext;
         
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotels"];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
         
         NSError *fetchError;
         NSArray *hotels = [context executeFetchRequest:request error:&fetchError];
