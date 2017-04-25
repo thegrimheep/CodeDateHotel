@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AutoLayout.h"
+#import "HotelsViewController.h"
 
 @interface ViewController ()
 
@@ -35,12 +36,23 @@
     [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
     [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
     
+    
     NSLayoutConstraint *browseHeight = [AutoLayout equalHeightConstraintFromView:browseButton toView:self.view withMultiplier:.333];
     [browseButton addTarget:self action:@selector(browseButtonSelected) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)browseButtonSelected {
+    HotelsViewController *hotelViewController = [[HotelsViewController alloc] init];
+    [[self navigationController] pushViewController:hotelViewController animated:YES];
     NSLog(@"Work on this for lab");
+}
+
+-(void)bookButtonSelected{
+    NSLog(@"book Button ");
+}
+
+-(void)lookUpButtonPressed{
+    NSLog(@"look Up Button ");
 }
 
 -(UIButton *)createButtonWithTitle:(NSString *)title {
