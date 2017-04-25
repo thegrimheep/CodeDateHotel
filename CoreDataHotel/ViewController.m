@@ -34,8 +34,8 @@
     UIButton *lookupButton = [self createButtonWithTitle:@"Look Up"];
     
     browseButton.backgroundColor = [UIColor redColor];
-    bookButton.backgroundColor = [UIColor colorWithRed:0.75 green:0.25 blue:1.0 alpha:1.0];
-    lookupButton.backgroundColor = [UIColor colorWithRed:1.5 green:3.25 blue:1.0 alpha:1.0];
+    bookButton.backgroundColor = [UIColor greenColor];
+    lookupButton.backgroundColor = [UIColor blueColor];
     
     [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
     [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
@@ -54,18 +54,8 @@
     [AutoLayout height:buttonHeight forView:lookupButton];
     [AutoLayout topOffset:topLayoutHeight + 2* buttonHeight fromView:lookupButton toView:self.view];
     
-//    NSLayoutConstraint *browseButtonTop = [AutoLayout genericConstraintFrom:browseButton toView:self.view withAttribute:NSLayoutAttributeTop];
-//    browseButtonTop.constant = navBarHeight;
-//    
-//    NSLayoutConstraint *bookButtonMid = [AutoLayout genericConstraintFrom:bookButton toView:self.view withAttribute:NSLayoutAttributeCenterX];
-//    bookButtonMid.constant = navBarHeight;
-//    
-//    
-//    NSLayoutConstraint *browseHeight = [AutoLayout equalHeightConstraintFromView:browseButton toView:self.view withMultiplier:.333];
-//    [browseButton addTarget:self action:@selector(browseButtonSelected) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    NSLayoutConstraint *bookButtonTop = [AutoLayout equalHeightConstraintFromView:bookButton toView:browseButton withMultiplier:.33];
-//    [bookButton addTarget:self action:@selector(bookButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+    [browseButton addTarget:self action:@selector(browseButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+    [bookButton addTarget:self action:@selector(bookButtonSelected) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)browseButtonSelected {
@@ -86,7 +76,7 @@
 -(UIButton *)createButtonWithTitle:(NSString *)title {
     UIButton *button = [[UIButton alloc]init];
     [button setTitle:title forState:normal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self.view addSubview:button];

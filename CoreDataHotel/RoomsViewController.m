@@ -7,10 +7,12 @@
 //
 
 #import "RoomsViewController.h"
+#import "HotelsViewController.h"
 #import "Room+CoreDataClass.h"
 #import "Room+CoreDataProperties.h"
 #import "Hotel+CoreDataClass.h"
 #import "Hotel+CoreDataProperties.h"
+#import "AppDelegate.h"
 
 @interface RoomsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -26,8 +28,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
+    [self allHotelRooms];
 }
 
 -(void)loadView {
@@ -35,12 +39,11 @@
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 300) style:UITableViewStylePlain];
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.allHotelRooms.count;
-}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    Room *room = [self.allHotelRooms objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[NSNumber numberWithUnsignedInteger:room.number]stringValue];
     
     NSString *number = [[NSString alloc] initWithFormat:@"Room Number: %hd\n", [self.allHotelRooms[indexPath.row] number]];
     NSString *beds = [[NSString alloc]initWithFormat:@"Number of Beds: %hd\n", [self.allHotelRooms[indexPath.row] beds]];
@@ -51,12 +54,23 @@
     return cell;
 }
 
-//-(void)setAllHotelRooms:(NSArray *)rooms {
-//    _allHotelRooms = rooms;
-//}
-//
-//-(NSArray *)allHotelRooms {
-//    return _allHotelRooms;
-//}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.allHotelRooms.count;
+}
+
+-(NSArray *)allHotelRooms {
+    if (!_allHotelRooms) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+        NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Room"];
+        
+        NSError *fetchError;
+        NSArray *rooms = [context executeFetchRequest:request error:&fetchError];
+    }
+    _allHotelRooms = rooms;
+}
+
+return _allHotelRooms;
+
 
 @end

@@ -15,7 +15,6 @@
 @interface HotelsViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(strong, nonatomic) NSArray *allHotels;
-
 @property(strong, nonatomic) UITableView *tableView;
 @property(strong, nonatomic) Hotel *selectedHotel;
 
@@ -25,7 +24,6 @@
     NSArray *_allHotels;
 }
 
-
 -(void)loadView {
     [super loadView];
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -33,9 +31,6 @@
         [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self.view addSubview:self.tableView];
-    //add tableViewas subview and apply contraints
-    //finish this table view to show hotels
-    //get the button to push to Rooms View Controller
 }
 
 -(void)viewDidLoad {
@@ -69,7 +64,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RoomsViewController *roomsViewController = [[RoomsViewController alloc]init];
-//    roomsViewController.selectedHotel *self.allHotels[indexPath.row];
+    roomsViewController.selectedHotel = self.allHotels[indexPath.row];
     [self.navigationController pushViewController:roomsViewController animated:YES];
 }
 
@@ -89,4 +84,5 @@
         [self.tableView reloadData];
     }
 }
+
 @end
