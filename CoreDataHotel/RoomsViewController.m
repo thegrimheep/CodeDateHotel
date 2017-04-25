@@ -9,8 +9,10 @@
 #import "RoomsViewController.h"
 #import "Room+CoreDataClass.h"
 #import "Room+CoreDataProperties.h"
+#import "Hotel+CoreDataClass.h"
+#import "Hotel+CoreDataProperties.h"
 
-@interface RoomsViewController () <UITableViewDataSource>
+@interface RoomsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic) NSArray *allHotelRooms;
 @property(strong, nonatomic) UITableView *tableView;

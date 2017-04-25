@@ -31,10 +31,13 @@
     UIButton *bookButton = [self createButtonWithTitle:@"Book"];
     UIButton *lookupButton = [self createButtonWithTitle:@"Look Up"];
     
-    browseButton.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.75 alpha:1.0];
+    browseButton.backgroundColor = [UIColor colorWithRed:0.5 green:1.0 blue:1.75 alpha:1.0];
     
     [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
     [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
+    
+    NSLayoutConstraint *broweButtonTop = [AutoLayout genericConstraintFrom:browseButton toView:self.view withAttribute:NSLayoutAttributeTop];
+    broweButtonTop.constant = navBarHeight;
     
     
     NSLayoutConstraint *browseHeight = [AutoLayout equalHeightConstraintFromView:browseButton toView:self.view withMultiplier:.333];
