@@ -7,6 +7,7 @@
 //
 
 #import "DatePickerViewController.h"
+#import "AvailabilityViewController.h"
 
 @interface DatePickerViewController ()
 
@@ -24,6 +25,15 @@
     
 }
 
+-(void)setupDatePickers {
+    self.endDate = [[UIDatePicker alloc]init];
+    self.endDate.datePickerMode = UIDatePickerModeDate;
+    self.endDate.frame = CGRectMake(0, 84.0, self.view.frame.size.width, 200.0);
+    
+    [self.view addSubview:self.endDate];
+}
+
+
 -(void)setupDoneButton {
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
     
@@ -39,6 +49,8 @@
         self.endDate.date = [NSDate date];
         return;
     }
+    AvailabilityViewController *availabilityController = [[AvailabilityViewController alloc]init];
+    [self.navigationController pushViewController:availabilityController animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -46,12 +58,5 @@
     // Do any additional setup after loading the view.
 }
 
--(void)setupDatePickers {
-    self.endDate = [[UIDatePicker alloc]init];
-    self.endDate.datePickerMode = UIDatePickerModeDate;
-    self.endDate.frame = CGRectMake(0, 84.0, self.view.frame.size.width, 200.0);
-    
-    [self.view addSubview:self.endDate];
-}
 
 @end
