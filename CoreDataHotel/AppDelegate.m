@@ -24,7 +24,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     [self setupRootViewController];
     [self bootstrapApp];
     return YES;
@@ -62,7 +62,8 @@
             for (NSDictionary *room in hotel[@"rooms"]) {
                 Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.persistentContainer.viewContext];
                 
-                newRoom.number = (NSInteger)room[@"number"];
+                NSNumber *number = room[@"number"];
+                newRoom.number = [number integerValue];
                 newRoom.beds = (NSInteger)room[@"beds"];
                 newRoom.rate = (NSInteger)room[@"rate"];
                 
