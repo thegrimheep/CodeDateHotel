@@ -26,37 +26,46 @@
 
 -(void)setupLayout {
     
-    float navBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
+    CGFloat topLayoutHeight = CGRectGetHeight(self.navigationController.navigationBar.frame) + 20;
+    CGFloat buttonHeight = (self.view.bounds.size.height - topLayoutHeight) / 3;
     
     UIButton *browseButton = [self createButtonWithTitle:@"Browse"];
     UIButton *bookButton = [self createButtonWithTitle:@"Book"];
     UIButton *lookupButton = [self createButtonWithTitle:@"Look Up"];
     
-    browseButton.backgroundColor = [UIColor colorWithRed:0.5 green:1.0 blue:1.75 alpha:1.0];
+    browseButton.backgroundColor = [UIColor redColor];
     bookButton.backgroundColor = [UIColor colorWithRed:0.75 green:0.25 blue:1.0 alpha:1.0];
     lookupButton.backgroundColor = [UIColor colorWithRed:0.75 green:0.25 blue:1.0 alpha:1.0];
     
     [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
     [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
+    [AutoLayout height:buttonHeight forView:browseButton];
+    [AutoLayout topOffset:topLayoutHeight fromView:browseButton toView:self.view];
+    
     
     [AutoLayout leadingConstaintFrom:bookButton toView:self.view];
     [AutoLayout trailingConstaintFrom:bookButton toView:self.view];
+    [AutoLayout height:buttonHeight forView:bookButton];
+    [AutoLayout topOffset:topLayoutHeight + buttonHeight fromView:bookButton toView:self.view];
+    
     
     [AutoLayout leadingConstaintFrom:lookupButton toView:self.view];
     [AutoLayout trailingConstaintFrom:lookupButton toView:self.view];
+    [AutoLayout height:buttonHeight forView:lookupButton];
+    [AutoLayout topOffset:topLayoutHeight + 2* buttonHeight fromView:browseButton toView:self.view];
     
-    NSLayoutConstraint *browseButtonTop = [AutoLayout genericConstraintFrom:browseButton toView:self.view withAttribute:NSLayoutAttributeTop];
-    browseButtonTop.constant = navBarHeight;
-    
-    NSLayoutConstraint *bookButtonMid = [AutoLayout genericConstraintFrom:bookButton toView:self.view withAttribute:NSLayoutAttributeCenterX];
-    bookButtonMid.constant = navBarHeight;
-    
-    
-    NSLayoutConstraint *browseHeight = [AutoLayout equalHeightConstraintFromView:browseButton toView:self.view withMultiplier:.333];
-    [browseButton addTarget:self action:@selector(browseButtonSelected) forControlEvents:UIControlEventTouchUpInside];
-    
-    NSLayoutConstraint *bookButtonTop = [AutoLayout equalHeightConstraintFromView:bookButton toView:browseButton withMultiplier:.33];
-    [bookButton addTarget:self action:@selector(bookButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+//    NSLayoutConstraint *browseButtonTop = [AutoLayout genericConstraintFrom:browseButton toView:self.view withAttribute:NSLayoutAttributeTop];
+//    browseButtonTop.constant = navBarHeight;
+//    
+//    NSLayoutConstraint *bookButtonMid = [AutoLayout genericConstraintFrom:bookButton toView:self.view withAttribute:NSLayoutAttributeCenterX];
+//    bookButtonMid.constant = navBarHeight;
+//    
+//    
+//    NSLayoutConstraint *browseHeight = [AutoLayout equalHeightConstraintFromView:browseButton toView:self.view withMultiplier:.333];
+//    [browseButton addTarget:self action:@selector(browseButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    NSLayoutConstraint *bookButtonTop = [AutoLayout equalHeightConstraintFromView:bookButton toView:browseButton withMultiplier:.33];
+//    [bookButton addTarget:self action:@selector(bookButtonSelected) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)browseButtonSelected {
