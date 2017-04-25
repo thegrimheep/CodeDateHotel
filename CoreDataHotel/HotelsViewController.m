@@ -25,6 +25,12 @@
 -(void)loadView {
     [super loadView];
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 300) style:UITableViewStylePlain];
+    
+        [super loadView];
+    
+        [self.view setBackgroundColor:[UIColor whiteColor]];
+        
+    
     //add tableViewas subview and apply contraints
     //finish this table view to show hotels
     //get the button to push to Rooms View Controller
