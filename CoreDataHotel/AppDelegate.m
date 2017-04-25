@@ -43,7 +43,7 @@
     if (count == 0) {
         NSDictionary *hotels = [[NSDictionary alloc]init];
         NSDictionary *rooms = [[NSDictionary alloc]init];
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"Hotels" ofType:@"json"];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
         NSData *jsonData = [NSData dataWithContentsOfFile:path];
         NSError *jsonError;
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];

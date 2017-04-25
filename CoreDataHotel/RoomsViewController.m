@@ -31,12 +31,13 @@
     self.tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
-    [self allHotelRooms];
+    self.allHotelRooms = [[self.selectedHotel rooms] allObjects];
+    
 }
 
 -(void)loadView {
     [super loadView];
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 300) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,7 +50,8 @@
     NSString *beds = [[NSString alloc]initWithFormat:@"Number of Beds: %hd\n", [self.allHotelRooms[indexPath.row] beds]];
     NSString *rate = [[NSString alloc] initWithFormat:@"Room rate: $%.02f\n", [self.allHotelRooms[indexPath.row] rate]];
     
-    cell.textLabel.text = (@"%@", number);
+//    Room *room = self.allHotelRooms[indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@", room.number];
     
     return cell;
 }
@@ -57,20 +59,6 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.allHotelRooms.count;
 }
-
--(NSArray *)allHotelRooms {
-    if (!_allHotelRooms) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Room"];
-        
-        NSError *fetchError;
-        NSArray *rooms = [context executeFetchRequest:request error:&fetchError];
-    }
-    _allHotelRooms = rooms;
-}
-
-return _allHotelRooms;
 
 
 @end
