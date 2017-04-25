@@ -29,8 +29,6 @@
         [super loadView];
     
         [self.view setBackgroundColor:[UIColor whiteColor]];
-        
-    
     //add tableViewas subview and apply contraints
     //finish this table view to show hotels
     //get the button to push to Rooms View Controller

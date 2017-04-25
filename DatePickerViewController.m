@@ -19,8 +19,26 @@
 -(void)loadView {
     [super loadView];
     [self setupDatePickers];
+    [self setupDoneButton];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+}
+
+-(void)setupDoneButton {
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
+    
+    [self.navigationItem setRightBarButtonItem:doneButton];
+    
+}
+
+-(void)doneButtonPressed {
+    NSDate *endDate = self.endDate.date;
+    
+    if ([[NSDate date] timeIntervalSinceReferenceDate] > [endDate timeIntervalSinceReferenceDate]) {
+        //you can customixe this in any way
+        self.endDate.date = [NSDate date];
+        return;
+    }
 }
 
 - (void)viewDidLoad {
