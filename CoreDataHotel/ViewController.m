@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "AutoLayout.h"
+#import "HotelsViewController.h"
+#import "DatePickerViewController.h"
 
 @interface ViewController ()
 
@@ -24,29 +26,57 @@
 
 -(void)setupLayout {
     
-    float navBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
+    CGFloat topLayoutHeight = CGRectGetHeight(self.navigationController.navigationBar.frame) +20;
+    CGFloat buttonHeight = (self.view.bounds.size.height - topLayoutHeight) / 3;
     
     UIButton *browseButton = [self createButtonWithTitle:@"Browse"];
     UIButton *bookButton = [self createButtonWithTitle:@"Book"];
     UIButton *lookupButton = [self createButtonWithTitle:@"Look Up"];
     
-    browseButton.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.75 alpha:1.0];
+    browseButton.backgroundColor = [UIColor redColor];
+    bookButton.backgroundColor = [UIColor greenColor];
+    lookupButton.backgroundColor = [UIColor blueColor];
     
     [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
     [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
+    [AutoLayout height:buttonHeight forView:browseButton];
+    [AutoLayout topOffset:topLayoutHeight fromView:browseButton toView:self.view];
     
-    NSLayoutConstraint *browseHeight = [AutoLayout equalHeightConstraintFromView:browseButton toView:self.view withMultiplier:.333];
+    
+    [AutoLayout leadingConstaintFrom:bookButton toView:self.view];
+    [AutoLayout trailingConstaintFrom:bookButton toView:self.view];
+    [AutoLayout height:buttonHeight forView:bookButton];
+    [AutoLayout topOffset:topLayoutHeight + buttonHeight fromView:bookButton toView:self.view];
+    
+    
+    [AutoLayout leadingConstaintFrom:lookupButton toView:self.view];
+    [AutoLayout trailingConstaintFrom:lookupButton toView:self.view];
+    [AutoLayout height:buttonHeight forView:lookupButton];
+    [AutoLayout topOffset:topLayoutHeight + 2* buttonHeight fromView:lookupButton toView:self.view];
+    
     [browseButton addTarget:self action:@selector(browseButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+    [bookButton addTarget:self action:@selector(bookButtonSelected) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)browseButtonSelected {
+    HotelsViewController *hotelViewController = [[HotelsViewController alloc] init];
+    [self.navigationController pushViewController:hotelViewController animated:YES];
     NSLog(@"Work on this for lab");
+}
+
+-(void)bookButtonSelected {
+    DatePickerViewController *datePickerController = [[DatePickerViewController alloc]init];
+    [self.navigationController pushViewController:datePickerController animated:YES];
+}
+
+-(void)lookUpButtonPressed{
+    NSLog(@"look Up Button ");
 }
 
 -(UIButton *)createButtonWithTitle:(NSString *)title {
     UIButton *button = [[UIButton alloc]init];
     [button setTitle:title forState:normal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self.view addSubview:button];

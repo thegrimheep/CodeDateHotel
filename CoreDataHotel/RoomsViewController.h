@@ -1,5 +1,5 @@
 //
-//  HotelsViewController.h
+//  RoomsViewController.h
 //  CoreDataHotel
 //
 //  Created by David Porter on 4/24/17.
@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Hotel+CoreDataClass.h"
+#import "Hotel+CoreDataProperties.h"
 
-@interface HotelsViewController : UIViewController
+@interface RoomsViewController : UIViewController
+
+@property(strong,nonatomic) Hotel *selectedHotel;
 
 @end

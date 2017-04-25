@@ -75,4 +75,33 @@
     return [AutoLayout genericConstraintFrom:view toView:otherView withAttribute:NSLayoutAttributeTrailing];
 }
 
++(NSLayoutConstraint *)height:(CGFloat)height
+                      forView:(UIView *)view{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:view
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:nil
+                                                                  attribute:NSLayoutAttributeNotAnAttribute
+                                                                 multiplier:1.0
+                                                                   constant:height];
+    
+    constraint.active = YES;
+    return constraint;
+}
+
++(NSLayoutConstraint *)topOffset:(CGFloat)offset
+                        fromView:(UIView *)view
+                          toView:(UIView *)otherView{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:view
+                                                                  attribute:NSLayoutAttributeTop
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:otherView
+                                                                  attribute:NSLayoutAttributeTop
+                                                                 multiplier:1.0
+                                                                   constant:offset];
+    
+    constraint.active = YES;
+    return constraint;
+}
+
 @end
