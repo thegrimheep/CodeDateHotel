@@ -12,6 +12,7 @@
 @interface DatePickerViewController ()
 
 @property(strong, nonatomic) UIDatePicker *endDate;
+@property(strong, nonatomic) UIDatePicker *startDate;
 
 @end
 
@@ -26,12 +27,13 @@
 }
 
 -(void)setupDatePickers {
+    
     self.endDate = [[UIDatePicker alloc]init];
     self.endDate.datePickerMode = UIDatePickerModeDate;
     self.endDate.frame = CGRectMake(0, 84.0, self.view.frame.size.width, 200.0);
-    
     [self.view addSubview:self.endDate];
 }
+
 
 
 -(void)setupDoneButton {
@@ -45,7 +47,7 @@
     NSDate *endDate = self.endDate.date;
     
     if ([[NSDate date] timeIntervalSinceReferenceDate] > [endDate timeIntervalSinceReferenceDate]) {
-        //you can customixe this in any way
+        //you can customize this in any way
         self.endDate.date = [NSDate date];
         return;
     }
