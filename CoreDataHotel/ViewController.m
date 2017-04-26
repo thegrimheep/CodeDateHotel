@@ -37,18 +37,18 @@
     bookButton.backgroundColor = [UIColor darkGrayColor];
     lookupButton.backgroundColor = [UIColor blueColor];
     
-    [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
-    [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
+    [AutoLayout leadingConstraintFrom:browseButton toView:self.view];
+    [AutoLayout trailingConstraintFrom:browseButton toView:self.view];
     [AutoLayout height:buttonHeight forView:browseButton];
     [AutoLayout topOffset:topLayoutHeight fromView:browseButton toView:self.view];
 
-    [AutoLayout leadingConstaintFrom:bookButton toView:self.view];
-    [AutoLayout trailingConstaintFrom:bookButton toView:self.view];
+    [AutoLayout leadingConstraintFrom:bookButton toView:self.view];
+    [AutoLayout trailingConstraintFrom:bookButton toView:self.view];
     [AutoLayout height:buttonHeight forView:bookButton];
     [AutoLayout topOffset:topLayoutHeight + buttonHeight fromView:bookButton toView:self.view];
     
-    [AutoLayout leadingConstaintFrom:lookupButton toView:self.view];
-    [AutoLayout trailingConstaintFrom:lookupButton toView:self.view];
+    [AutoLayout leadingConstraintFrom:lookupButton toView:self.view];
+    [AutoLayout trailingConstraintFrom:lookupButton toView:self.view];
     [AutoLayout height:buttonHeight forView:lookupButton];
     [AutoLayout topOffset:topLayoutHeight + 2* buttonHeight fromView:lookupButton toView:self.view];
     

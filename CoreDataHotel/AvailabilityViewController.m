@@ -15,6 +15,7 @@
 #import "Room+CoreDataProperties.h"
 #import "Hotel+CoreDataClass.h"
 #import "Hotel+CoreDataProperties.h"
+#import "BookViewController.h"
 
 @interface AvailabilityViewController () <UITableViewDataSource>
 
@@ -103,17 +104,17 @@
     return cell;
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-////    Room *room = self.availabeRooms[indexPath.row]; this is commented out
-//    Room *currentRoom = [self.availabeRooms objectAtIndexPath:indexPath];
-//    
-//    BookViewController *bookViewConroller = [[BookViewConroller alloc]init];
-//    bookViewConroller.room = room;
-//    bookViewConroller.endDate = self.endDate;
-//    
-//    [self.navigationController pushViewController:bookViewConroller animated:YES];
-//    
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    Room *room = self.availabeRooms[indexPath.row]; this is commented out
+    Room *currentRoom = [self.availabeRooms objectAtIndexPath:indexPath];
+    
+    BookViewController *bookViewController = [[BookViewController alloc]init];
+    bookViewController.selectedRoom = currentRoom;
+    bookViewController.endDate = self.endDate;
+    
+    [self.navigationController pushViewController:bookViewController animated:YES];
+    
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.availabeRooms.sections.count;
