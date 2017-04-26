@@ -8,6 +8,7 @@
 
 #import "DatePickerViewController.h"
 #import "AvailabilityViewController.h"
+#import "BookViewController.h"
 
 @interface DatePickerViewController ()
 
@@ -32,7 +33,7 @@
     self.endDate.datePickerMode = UIDatePickerModeDate;
     self.endDate.frame = CGRectMake(0, 84.0, self.view.frame.size.width, 200.0);
     
-        
+    
     [self.view addSubview:self.endDate];
 }
 
@@ -63,6 +64,7 @@
     if ([[NSDate date] timeIntervalSinceReferenceDate] > [startDate timeIntervalSinceReferenceDate]) {
         self.startDate.date = [NSDate date];
     }
+    
 }
 
 - (void)viewDidLoad {
