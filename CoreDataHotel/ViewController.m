@@ -41,13 +41,11 @@
     [AutoLayout trailingConstaintFrom:browseButton toView:self.view];
     [AutoLayout height:buttonHeight forView:browseButton];
     [AutoLayout topOffset:topLayoutHeight fromView:browseButton toView:self.view];
-    
-    
+
     [AutoLayout leadingConstaintFrom:bookButton toView:self.view];
     [AutoLayout trailingConstaintFrom:bookButton toView:self.view];
     [AutoLayout height:buttonHeight forView:bookButton];
     [AutoLayout topOffset:topLayoutHeight + buttonHeight fromView:bookButton toView:self.view];
-    
     
     [AutoLayout leadingConstaintFrom:lookupButton toView:self.view];
     [AutoLayout trailingConstaintFrom:lookupButton toView:self.view];
