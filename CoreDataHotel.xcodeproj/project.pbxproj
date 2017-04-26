@@ -20,6 +20,7 @@
 		A10AE1781EAEA48C00AD29E2 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10AE1771EAEA48C00AD29E2 /* HotelsViewController.m */; };
 		A10FAB2C1EAFBCC30017159E /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10FAB2B1EAFBCC30017159E /* DatePickerViewController.m */; };
 		A10FAB2F1EAFCF9A0017159E /* AvailabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10FAB2E1EAFCF9A0017159E /* AvailabilityViewController.m */; };
+		A10FAB351EB0FFAC0017159E /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10FAB341EB0FFAC0017159E /* BookViewController.m */; };
 		A1358A7E1EAEFE3000E95214 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1358A7D1EAEFE3000E95214 /* RoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		A10FAB2B1EAFBCC30017159E /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = ../DatePickerViewController.m; sourceTree = "<group>"; };
 		A10FAB2D1EAFCF9A0017159E /* AvailabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailabilityViewController.h; sourceTree = "<group>"; };
 		A10FAB2E1EAFCF9A0017159E /* AvailabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityViewController.m; sourceTree = "<group>"; };
+		A10FAB331EB0FFAC0017159E /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		A10FAB341EB0FFAC0017159E /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		A1358A7C1EAEFE3000E95214 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		A1358A7D1EAEFE3000E95214 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +114,8 @@
 				A10AE15A1EAE5F3200AD29E2 /* ViewController.m */,
 				A10FAB2D1EAFCF9A0017159E /* AvailabilityViewController.h */,
 				A10FAB2E1EAFCF9A0017159E /* AvailabilityViewController.m */,
+				A10FAB331EB0FFAC0017159E /* BookViewController.h */,
+				A10FAB341EB0FFAC0017159E /* BookViewController.m */,
 				A10AE1761EAEA48C00AD29E2 /* HotelsViewController.h */,
 				A10AE1771EAEA48C00AD29E2 /* HotelsViewController.m */,
 			);
@@ -216,6 +221,7 @@
 				A10AE1611EAE5F3200AD29E2 /* CoreDataHotel.xcdatamodeld in Sources */,
 				A10AE1581EAE5F3200AD29E2 /* AppDelegate.m in Sources */,
 				A10FAB2F1EAFCF9A0017159E /* AvailabilityViewController.m in Sources */,
+				A10FAB351EB0FFAC0017159E /* BookViewController.m in Sources */,
 				A10AE1781EAEA48C00AD29E2 /* HotelsViewController.m in Sources */,
 				A1358A7E1EAEFE3000E95214 /* RoomsViewController.m in Sources */,
 				A10AE1551EAE5F3200AD29E2 /* main.m in Sources */,
