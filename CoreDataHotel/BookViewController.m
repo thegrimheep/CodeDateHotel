@@ -17,12 +17,17 @@
 #import "Reservation+CoreDataProperties.h"
 #import "Guest+CoreDataClass.h"
 #import "Guest+CoreDataProperties.h"
+
 @interface BookViewController ()
+
 @property(strong, nonatomic)UITextField *firstNameField;
 @property(strong, nonatomic)UITextField *lastNameField;
 @property(strong, nonatomic)UITextField *emailField;
+
 @end
+
 @implementation BookViewController
+
 - (void)loadView{
     [super loadView];
     
@@ -31,10 +36,12 @@
     [self setupTextFields];
     [self setupDoneButton];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 - (void)setupDoneButton{
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
@@ -42,8 +49,8 @@
                                                                                action:@selector(doneButtonPressed)];
     
     [self.navigationItem setRightBarButtonItem:doneButton];
-    
 }
+
 - (void)doneButtonPressed{
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -71,8 +78,8 @@
         NSLog(@"Save reservation successful!");
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
-    
 }
+
 - (void)setupTextFields{
     
     UILabel *hotelName = [[UILabel alloc]init];
@@ -142,4 +149,5 @@
     [emailField setTranslatesAutoresizingMaskIntoConstraints:NO];
     
 }
+
 @end

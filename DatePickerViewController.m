@@ -32,7 +32,7 @@
     self.endDate.datePickerMode = UIDatePickerModeDate;
     self.endDate.frame = CGRectMake(0, 84.0, self.view.frame.size.width, 200.0);
     
-    
+        
     [self.view addSubview:self.endDate];
 }
 
@@ -57,6 +57,7 @@
     }
     AvailabilityViewController *availabilityController = [[AvailabilityViewController alloc]init];
     availabilityController.endDate = endDate;
+    availabilityController.startDate = [NSDate date];
     [self.navigationController pushViewController:availabilityController animated:YES];
     
     if ([[NSDate date] timeIntervalSinceReferenceDate] > [startDate timeIntervalSinceReferenceDate]) {
