@@ -17,7 +17,7 @@
 #import "Hotel+CoreDataProperties.h"
 #import "BookViewController.h"
 
-@interface AvailabilityViewController () <UITableViewDataSource>
+@interface AvailabilityViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic) UITableView *tableView;
 @property(strong, nonatomic) NSFetchedResultsController *availabeRooms;
@@ -79,6 +79,7 @@
     self.tableView = [[UITableView alloc]init];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
