@@ -34,7 +34,7 @@
     UIButton *lookupButton = [self createButtonWithTitle:@"Look Up"];
     
     browseButton.backgroundColor = [UIColor redColor];
-    bookButton.backgroundColor = [UIColor greenColor];
+    bookButton.backgroundColor = [UIColor darkGrayColor];
     lookupButton.backgroundColor = [UIColor blueColor];
     
     [AutoLayout leadingConstaintFrom:browseButton toView:self.view];
