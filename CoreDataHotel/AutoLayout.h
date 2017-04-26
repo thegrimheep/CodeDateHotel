@@ -25,10 +25,10 @@
                                               toView:(UIView *)otherView
                                       withMultiplier:(CGFloat)multiplier;
 
-+(NSLayoutConstraint *)leadingConstaintFrom:(UIView *)view
++(NSLayoutConstraint *)leadingConstraintFrom:(UIView *)view
                                      toView:(UIView *)otherView;
 
-+(NSLayoutConstraint *)trailingConstaintFrom:(UIView *)view
++(NSLayoutConstraint *)trailingConstraintFrom:(UIView *)view
                                       toView:(UIView *)otherView;
 
 +(NSLayoutConstraint *)height:(CGFloat)height
@@ -37,5 +37,10 @@
 +(NSLayoutConstraint *)topOffset:(CGFloat)offset
                         fromView:(UIView *)view
                           toView:(UIView *)otherView;
+
++(NSArray *)constraintsWithVFLForViewDictionary:(NSDictionary *)viewDictionary
+                           forMetricsDictionary:(NSDictionary *)metricsDictionary
+                                    withOptions:(NSLayoutFormatOptions)options
+                               withVisualFormat:(NSString *)visualFormat;
 
 @end
