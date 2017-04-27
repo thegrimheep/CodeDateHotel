@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
+
 #import "ViewController.h"
 #import "Hotel+CoreDataProperties.h"
 #import "Hotel+CoreDataClass.h"
@@ -27,6 +31,9 @@
     
     [self setupRootViewController];
     [self bootstrapApp];
+    
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 
