@@ -6,6 +6,7 @@
 //  Copyright © 2017 David Porter. All rights reserved.
 //
 
+@import Crashlytics;
 #import "ViewController.h"
 #import "AutoLayout.h"
 #import "HotelsViewController.h"
@@ -57,12 +58,16 @@
 }
 
 -(void)browseButtonSelected {
+    
+    [Answers logCustomEventWithName:@"View Controller Browse Button Pressed" customAttributes:nil];
     HotelsViewController *hotelViewController = [[HotelsViewController alloc] init];
     [self.navigationController pushViewController:hotelViewController animated:YES];
+    
     NSLog(@"Work on this for lab");
 }
 
 -(void)bookButtonSelected {
+    [Answers logCustomEventWithName:@"View Controller Book Button Pressed" customAttributes:nil];
     DatePickerViewController *datePickerController = [[DatePickerViewController alloc]init];
     [self.navigationController pushViewController:datePickerController animated:YES];
 }
