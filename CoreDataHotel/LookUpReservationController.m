@@ -30,15 +30,13 @@
 - (void)loadView {
     [super loadView];
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
     [self.view addSubview:self.tableView];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 
