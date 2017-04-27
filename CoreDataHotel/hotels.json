@@ -1,8 +1,8 @@
 {
     "Hotels": [
     {
-                "name" : "Fancy Estates",
-                "location" : "Downtown",
+                "name" : "Hotel California",
+                "location" : "California",
                 "stars" : 4,
                 "rooms" : [
                 {
@@ -35,8 +35,8 @@
                 ]
     },
                 {
-                "name" : "Solid Stay",
-                "location" : "Fremont",
+                "name" : "Eastside Hotel",
+                "location" : "Long Beach",
                 "stars" : 3,
                 "rooms" : [
                            {
@@ -103,7 +103,7 @@
                            ]
                 },
                 {
-                "name" : "Okay Motel",
+                "name" : "Hotel Motel Holiday Inn",
                 "location" : "Sodo",
                 "stars" : 1,
                 "rooms" : [
