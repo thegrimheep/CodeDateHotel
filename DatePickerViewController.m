@@ -25,7 +25,6 @@
     [self setupDatePickers];
     [self setupDoneButton];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
 }
 
 -(void)setupDatePickers {
@@ -65,25 +64,22 @@
     [self.endDate setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
-
-
 -(void)setupDoneButton {
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
     
     [self.navigationItem setRightBarButtonItem:doneButton];
-    
 }
 
 -(void)doneButtonPressed {
     NSDate *startDate = self.startDate.date;
     NSDate *endDate = self.endDate.date;
     
-    
     if ([[NSDate date] timeIntervalSinceReferenceDate] > [endDate timeIntervalSinceReferenceDate]) {
         //you can customize this in any way
         self.endDate.date = [NSDate date];
         return;
     }
+    
     AvailabilityViewController *availabilityController = [[AvailabilityViewController alloc]init];
     availabilityController.endDate = endDate;
     availabilityController.startDate = [NSDate date];
@@ -92,7 +88,6 @@
     if ([[NSDate date] timeIntervalSinceReferenceDate] > [startDate timeIntervalSinceReferenceDate]) {
         self.startDate.date = [NSDate date];
     }
-    
 }
 
 - (void)viewDidLoad {
