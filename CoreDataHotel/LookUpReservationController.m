@@ -20,8 +20,8 @@
 
 @interface LookUpReservationController () <UITableViewDelegate, UITableViewDataSource>
 
-@property(strong, nonatomic)UITableView *tableView;
-
+@property(strong, nonatomic) UITableView *tableView;
+@property(strong, nonatomic) NSFetchedResultsController *reservedRooms;
 
 @end
 
@@ -30,16 +30,23 @@
 - (void)loadView {
     [super loadView];
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
     [self.view addSubview:self.tableView];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
+
+//-(NSFetchedResultsController *)reservedRooms {
+//    
+//    if (!_reservedRooms) {
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
+//        
+//    }
+//}
 
 
 @end
