@@ -6,6 +6,8 @@
 //  Copyright © 2017 David Porter. All rights reserved.
 //
 
+@import Crashlytics;
+
 #import "BookViewController.h"
 #import "AutoLayout.h"
 #import "AppDelegate.h"
@@ -74,9 +76,13 @@
     
     if (saveError) {
         NSLog(@"Save error is %@", saveError);
+        
+        NSDictionary *attributesDictionary = @{@"Ssave Error" : saveError.localizedDescription};
+        [Answers logCustomEventWithName:@"Error booking" customAttributes:attributesDictionary];
     } else {
         NSLog(@"Save reservation successful!");
         [self.navigationController popToRootViewControllerAnimated:YES];
+        [Answers logCustomEventWithName:@"Booking dot yeah!" customAttributes:nil];
     }
 }
 
