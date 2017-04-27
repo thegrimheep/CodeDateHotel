@@ -20,8 +20,8 @@
 
 @interface LookUpReservationController () <UITableViewDelegate, UITableViewDataSource>
 
-@property(strong, nonatomic)UITableView *tableView;
-
+@property(strong, nonatomic) UITableView *tableView;
+@property(strong, nonatomic) NSFetchedResultsController *reservedRooms;
 
 @end
 
@@ -38,6 +38,15 @@
     [super viewDidLoad];
     
 }
+
+//-(NSFetchedResultsController *)reservedRooms {
+//    
+//    if (!_reservedRooms) {
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
+//        
+//    }
+//}
 
 
 @end
