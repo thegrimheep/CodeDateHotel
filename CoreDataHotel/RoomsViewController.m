@@ -32,7 +32,6 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
     self.allHotelRooms = [[self.selectedHotel rooms] allObjects];
-    
 }
 
 -(void)loadView {
