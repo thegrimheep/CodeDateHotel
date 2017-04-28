@@ -32,7 +32,6 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
         request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ AND endDate >= %@", self.endDate, self.startDate];
-        //set up self.startDate here
         
         NSError *roomError;
         NSArray *results = [appDelegate.persistentContainer.viewContext executeFetchRequest:request error:&roomError];
@@ -42,6 +41,7 @@
         for (Reservation *reservation in results) {
             [unavailableRooms addObject:reservation.room];
         }
+        
         NSFetchRequest *roomRequest = [NSFetchRequest fetchRequestWithEntityName:@"Room"];
         roomRequest.predicate = [NSPredicate predicateWithFormat:@"NOT self IN %@", unavailableRooms];
         
@@ -52,13 +52,10 @@
         
         NSError *availableRoomError;
         
-//        _availabeRooms = [appDelegate.persistentContainer.viewContext executeFetchRequest:roomRequest error:&availableRoomError];
-        
         _availabeRooms = [[NSFetchedResultsController alloc]initWithFetchRequest:roomRequest managedObjectContext:appDelegate.persistentContainer.viewContext sectionNameKeyPath:@"hotel.name" cacheName:nil];
         
         [_availabeRooms performFetch:&availableRoomError];
     }
-    
     return _availabeRooms;
 }
 
@@ -84,21 +81,17 @@
     
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [AutoLayout fullScreenConstraintsWithVFLForView:self.tableView];
-    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id<NSFetchedResultsSectionInfo> sectionInfo = [[self.availabeRooms sections]objectAtIndex:section];
     
     return sectionInfo.numberOfObjects;
-    
-//    return self.availabeRooms.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-//    Room *currentRoom = self.availabeRooms[indexPath.row];
     Room *currentRoom = [self.availabeRooms objectAtIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%i", currentRoom.number];
     
@@ -106,7 +99,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    Room *room = self.availabeRooms[indexPath.row]; this is commented out
+
     Room *currentRoom = [self.availabeRooms objectAtIndexPath:indexPath];
     
     BookViewController *bookViewController = [[BookViewController alloc]init];
@@ -114,7 +107,6 @@
     bookViewController.endDate = self.endDate;
     
     [self.navigationController pushViewController:bookViewController animated:YES];
-    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

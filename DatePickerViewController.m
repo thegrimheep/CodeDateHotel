@@ -66,7 +66,6 @@
 
 -(void)setupDoneButton {
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
-    
     [self.navigationItem setRightBarButtonItem:doneButton];
 }
 
@@ -89,12 +88,10 @@
     availabilityController.endDate = endDate;
     availabilityController.startDate = [NSDate date];
     [self.navigationController pushViewController:availabilityController animated:YES];
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 

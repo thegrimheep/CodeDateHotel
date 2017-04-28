@@ -49,9 +49,6 @@
     NSString *beds = [[NSString alloc]initWithFormat:@"Number of Beds: %hd\n", [self.allHotelRooms[indexPath.row] beds]];
     NSString *rate = [[NSString alloc] initWithFormat:@"Room rate: $%.02f\n", [self.allHotelRooms[indexPath.row] rate]];
     
-//    Room *room = self.allHotelRooms[indexPath.row];
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@", room.number];
-    
     return cell;
 }
 

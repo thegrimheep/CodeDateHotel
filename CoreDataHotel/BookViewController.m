@@ -41,7 +41,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)setupDoneButton{
@@ -153,7 +152,6 @@
     [firstNameField setTranslatesAutoresizingMaskIntoConstraints:NO];
     [lastNameField setTranslatesAutoresizingMaskIntoConstraints:NO];
     [emailField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
 }
 
 @end
