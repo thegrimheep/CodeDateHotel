@@ -10,7 +10,6 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
-
 #import "ViewController.h"
 #import "Hotel+CoreDataProperties.h"
 #import "Hotel+CoreDataClass.h"
@@ -25,7 +24,6 @@
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -47,6 +45,7 @@
     if (error) {
         NSLog(@"%@",error.localizedDescription);
     }
+    
     if (count == 0) {
         NSDictionary *hotels = [[NSDictionary alloc]init];
         NSDictionary *rooms = [[NSDictionary alloc]init];
@@ -58,6 +57,7 @@
         if (jsonError) {
             NSLog(@"%@", jsonError.localizedDescription);
         }
+        
         hotels = jsonDictionary[@"Hotels"];
         
         for (NSDictionary *hotel in hotels) {
@@ -96,7 +96,6 @@
     
     [self.window makeKeyAndVisible];
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

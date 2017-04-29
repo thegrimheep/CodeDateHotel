@@ -16,7 +16,7 @@
 #import "Guest+CoreDataProperties.h"
 #import "Reservation+CoreDataClass.h"
 #import "Reservation+CoreDataProperties.h"
-#import "LookUpReservationController.h"
+#import "LookUpReservationController.h" 
 
 @interface LookUpReservationController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -36,7 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 //-(NSFetchedResultsController *)reservedRooms {

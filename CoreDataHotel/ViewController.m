@@ -60,12 +60,9 @@
 }
 
 -(void)browseButtonSelected {
-    
     [Answers logCustomEventWithName:@"View Controller Browse Button Pressed" customAttributes:nil];
     HotelsViewController *hotelViewController = [[HotelsViewController alloc] init];
     [self.navigationController pushViewController:hotelViewController animated:YES];
-    
-    NSLog(@"Work on this for lab");
 }
 
 -(void)bookButtonSelected {
@@ -92,13 +89,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
